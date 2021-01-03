@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tabela.css">
+    <title>Table</title>
+</head>
+
+<body>
+    <div id="msg"></div>
+    <h1 class="text-center">Tabela</h1>
+    <div id='container'>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Deletar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each array}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{nome}}</td>
+                        <td>{{email}}</td>
+                        <td><a href="/deletar/{{id}}"><button class="btn btn-danger">Deletar</button></a></td>
+                        <td><a href="/editar/{{id}}"><button class="btn btn-success">Editar</button></a></td>        
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
